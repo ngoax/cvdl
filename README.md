@@ -39,13 +39,7 @@ This project implements a facial emotion recognition model that can:
 
 1. Install dependencies:
 ```bash
-pip install torch torchvision
-pip install opencv-python
-pip install albumentations
-pip install matplotlib seaborn
-pip install scikit-learn
-pip install tqdm
-pip install torchcam
+pip install -r requirements.txt
 ```
 
 ## Usage
