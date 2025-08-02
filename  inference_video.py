@@ -5,10 +5,9 @@ import numpy as np
 import albumentations as A
 from albumentations.pytorch import ToTensorV2
 import torch.nn.functional as F
-from model import ImprovedCNN  # Your model
-from gradcam import GradCAM   # Your GradCAM class
+from model import ImprovedCNN
+from gradcam import GradCAM
 
-# Setup
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = ImprovedCNN().to(device)
 model.load_state_dict(torch.load("best-weights.pt", map_location=device))
@@ -22,10 +21,9 @@ transform = A.Compose([
 ])
 
 face_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
-target_layer = model.features[-1]  # Adapt if needed
+target_layer = model.features[6].bn2
 gradcam = GradCAM(model, target_layer)
 
-# Utils
 def overlay_heatmap(image, mask, alpha=0.4):
     mask = np.nan_to_num(mask, nan=0.0)
     mask = np.clip(mask, 0, 1)           
@@ -35,7 +33,6 @@ def overlay_heatmap(image, mask, alpha=0.4):
     overlayed = overlayed / np.max(overlayed)
     return np.uint8(255 * overlayed)
 
-# Main logic
 def process_video(input_path, output_path):
     cap = cv2.VideoCapture(input_path)
     width, height = int(cap.get(3)), int(cap.get(4))
@@ -63,7 +60,6 @@ def process_video(input_path, output_path):
                 pred = torch.argmax(logits, dim=1).item()
                 probs = torch.softmax(logits, dim=1)[0]
 
-            # Grad-CAM
             mask = gradcam.generate(input_tensor, target_class=pred)
             mask = cv2.resize(mask, (w, h))
             overlayed = overlay_heatmap(face_rgb, mask)
@@ -78,7 +74,6 @@ def process_video(input_path, output_path):
     out.release()
     print(f"Saved to {output_path}")
 
-# CLI
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--input", required=True, help="Path to input video")
