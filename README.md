@@ -2,7 +2,7 @@
 
 **Group members:** Antonia Härle, Clara Sophie Negwer, Andre Ngo, Jonas Saathoff
 
-Project for Software Development Practical: Compputer Vision and Deep Learning. It demonstrates (real-time) facial emotion recognition using a custom CNN architecture with ResNet-style blocks and Squeeze-and-Excitation (SE) channel attention.
+Project for Software Development Practical: Computer Vision and Deep Learning. It demonstrates (real-time) facial emotion recognition using a custom CNN architecture with ResNet-style blocks and Squeeze-and-Excitation (SE) channel attention.
 
 
 
@@ -49,7 +49,7 @@ pip install -r requirements.txt
 Run the live emotion detection demo:
 
 ```bash
-python live_demo.py
+python3 live_demo.py
 ```
 
 Press 'q' to quit the demo.
@@ -59,48 +59,12 @@ Press 'q' to quit the demo.
 Process a video file with emotion predictions and attention heatmaps:
 
 ```bash
-python inference_video.py --input path/to/video.mp4 --output output_with_emotions.mp4
+python3 inference_video.py --input path/to/video.mp4 --output output_with_emotions.mp4
 ```
 
 ### Training
 
-The main training pipeline is in [`final_model_aug.ipynb`](final_model_aug.ipynb). Key features:
-- Data augmentation with Albumentations
-- Class-balanced loss weighting
-- Early stopping and learning rate scheduling
-- Comprehensive evaluation metrics
-
-### Model Interpretability
-
-Generate Grad-CAM visualizations using the [`GradCAM`](gradcam.py) class:
-
-```python
-from gradcam import GradCAM, show_gradcam_on_image
-from model import ImprovedCNN
-
-model = ImprovedCNN(num_classes=6)
-model.load_state_dict(torch.load("best-weights.pt"))
-target_layer = model.features[6]  # Target layer for visualization
-gradcam = GradCAM(model, target_layer)
-```
-
-## Dataset
-
-The project uses the FER2013 dataset with 6 emotion classes:
-- **Training**: ~28K images
-- **Validation**: ~6K images
-- **Image size**: 64x64 pixels (resized)
-- **Classes**: Angry, Disgust, Fear, Happy, Sad, Surprise
-
-### Data Augmentation
-
-Aggressive augmentation strategy for better generalization:
-- Horizontal flipping (50%)
-- Random brightness/contrast (30%)
-- Shift/scale/rotation (70%)
-- Gaussian blur (10%)
-- Coarse dropout (25%)
-- Normalization with dataset-specific statistics
+The main training pipeline is in [`final_model_aug.ipynb`](final_model_aug.ipynb). 
 
 
 ## Experimental Variations
