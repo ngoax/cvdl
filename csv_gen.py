@@ -12,7 +12,7 @@ EMOTION_CLASSES = ['anger', 'disgust', 'fear', 'happiness', 'sadness', 'surprise
 MEAN = (0.5072, 0.5072, 0.5072)
 STD  = (0.2062, 0.2062, 0.2062)
 
-weights_path = "best-weights-ferplus.pt"
+weights_path = "best-weights.pt"
 
 def get_transform():
     return transforms.Compose([

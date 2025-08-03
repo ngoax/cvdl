@@ -17,21 +17,22 @@ This project implements a facial emotion recognition model that can:
 ## Project Structure
 
 ```
-├── model.py                    # Core CNN architecture
-├── live_demo.py                # Real-time webcam demo
-├── inference_video.py          # Video processing with Grad-CAM
-├── gradcam.py                  # Grad-CAM implementation
-├── csv_gen.py                  # .csv generation file
-├── final_model_ferplus.ipynb   # Main training notebook
-├── best-weights.pt             # Model weights
-├── README.md                   # This file
-├── ferplus/                    # FER+ dataset experiments
-│   ├── ferplus_moderate_aug.ipynb
-└── experiments_fer2013/      # Various Augmentation strategy experiments
-    ├── no-aug.ipynb
-    ├── horizontalflip-aug.ipynb
-    ├── verticalflip_aug.ipynb
-    └── mid-aug.ipynb
+├── model.py                        # Core CNN architecture
+├── live_demo.py                    # Real-time webcam demo
+├── inference_video.py              # Video processing with Grad-CAM
+├── gradcam.py                      # Grad-CAM implementation
+├── csv_gen.py                      # .csv generation file
+├── final_model_ferplus.ipynb       # Main training notebook
+├── best-weights.pt                 # Model weights
+├── README.md                       # This file
+├── experiments_ferplus/                        
+│   ├── ferplus_moderate_aug.ipynb  # FER+ experiment moderate augmentation
+└── experiments_fer2013/            # Various Augmentation strategy 
+    ├── final_model_fer2013.ipynb   # Final model FER-2013
+    ├── no_aug.ipynb
+    ├── horizontalflip.ipynb
+    ├── verticalflip.ipynb
+    └── moderate_aug.ipynb
 ```
 
 ## Installation
@@ -67,6 +68,8 @@ Iterates through images in a folder and outputs the corresponding classification
 
 ```bash
 python3 csv_gen.py --input path/to/imagefolder --ouptput predictions.csv
+```
+
 
 ### Training
 
