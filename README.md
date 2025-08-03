@@ -17,18 +17,17 @@ This project implements a facial emotion recognition model that can:
 ## Project Structure
 
 ```
-├── model.py                # Core CNN architecture
-├── live_demo.py            # Real-time webcam demo
-├── inference_video.py      # Video processing with Grad-CAM
-├── gradcam.py              # Grad-CAM implementation
-├── final_model_aug.ipynb   # Main training notebook
-├── best-weights.pt         # Model weights
-├── README.md               # This file
-├── ferplus/                # FER+ dataset experiments
-│   ├── ferplus.ipynb
-│   ├── ferplus_all_aug.ipynb
-│   └── best-weights-ferplus.pt
-└── vary_augm_fer2013/      # Various Augmentation strategy experiments
+├── model.py                    # Core CNN architecture
+├── live_demo.py                # Real-time webcam demo
+├── inference_video.py          # Video processing with Grad-CAM
+├── gradcam.py                  # Grad-CAM implementation
+├── csv_gen.py                  # .csv generation file
+├── final_model_ferplus.ipynb   # Main training notebook
+├── best-weights.pt             # Model weights
+├── README.md                   # This file
+├── ferplus/                    # FER+ dataset experiments
+│   ├── ferplus_moderate_aug.ipynb
+└── experiments_fer2013/      # Various Augmentation strategy experiments
     ├── no-aug.ipynb
     ├── horizontalflip-aug.ipynb
     ├── verticalflip_aug.ipynb
@@ -62,18 +61,25 @@ Process a video file with emotion predictions and attention heatmaps:
 python3 inference_video.py --input path/to/video.mp4 --output output_with_emotions.mp4
 ```
 
+### .csv file generation
+
+Iterates through images in a folder and outputs the corresponding classification scores in a csv file
+
+```bash
+python3 csv_gen.py --input path/to/imagefolder --ouptput predictions.csv
+
 ### Training
 
-The main training pipeline is in [`final_model_aug.ipynb`](final_model_aug.ipynb). 
+The main training pipeline is in [`final_model_ferplus.ipynb`](final_model_ferplus.ipynb). 
 
 
 ## Experimental Variations
 
-The `vary_augm_fer2013/` directory contains experiments with different augmentation strategies:
+The `experiments_fer2013/` directory contains experiments with different augmentation strategies:
 
 1. **no-aug.ipynb**: Baseline without augmentation (~63% accuracy)
 2. **horizontalflip-aug.ipynb**: Basic horizontal flipping (~66% accuracy)
 3. **verticalflip_aug.ipynb**: Vertical flipping experiments (~62% accuracy)
 4. **mid-aug.ipynb**: Moderate augmentation (~71% accuracy)
 
-The `ferplus/` directory contains experiments on the FER+ dataset with refined labels.
+The `experiments_ferplus/` directory contains experiment on the FER+ dataset with moderate augmentation strategy.
