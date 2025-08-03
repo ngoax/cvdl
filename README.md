@@ -68,6 +68,8 @@ Iterates through images in a folder and outputs the corresponding classification
 
 ```bash
 python3 csv_gen.py --input path/to/imagefolder --ouptput predictions.csv
+```
+
 
 ### Training
 
