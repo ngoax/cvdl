@@ -67,7 +67,7 @@ python3 inference_video.py --input path/to/video.mp4 --output output_with_emotio
 Iterates through images in a folder and outputs the corresponding classification scores in a csv file
 
 ```bash
-python3 csv_gen.py --input path/to/imagefolder --ouptput predictions.csv
+python3 csv_gen.py path/to/imagefolder --ouptput predictions.csv
 ```
 
 
