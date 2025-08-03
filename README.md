@@ -80,9 +80,9 @@ The main training pipeline is in [`final_model_ferplus.ipynb`](final_model_ferpl
 
 The `experiments_fer2013/` directory contains experiments with different augmentation strategies:
 
-1. **no_aug.ipynb**: Baseline without augmentation (~63% accuracy)
-2. **horizontalflip.ipynb**: Basic horizontal flipping (~66% accuracy)
-3. **verticalflip.ipynb**: Vertical flipping experiments (~62% accuracy)
+1. **no_aug.ipynb**: Baseline without augmentation (~60% accuracy)
+2. **horizontalflip.ipynb**: Basic horizontal flipping (~62% accuracy)
+3. **verticalflip.ipynb**: Vertical flipping experiments (~57% accuracy)
 4. **moderate_aug.ipynb**: Moderate augmentation (~71% accuracy)
 
 The `experiments_ferplus/` directory contains experiment on the FER+ dataset with moderate augmentation strategy.
