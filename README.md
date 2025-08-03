@@ -83,6 +83,6 @@ The `experiments_fer2013/` directory contains experiments with different augment
 1. **no_aug.ipynb**: Baseline without augmentation (~60% accuracy)
 2. **horizontalflip.ipynb**: Basic horizontal flipping (~62% accuracy)
 3. **verticalflip.ipynb**: Vertical flipping experiments (~57% accuracy)
-4. **moderate_aug.ipynb**: Moderate augmentation (~71% accuracy)
+4. **moderate_aug.ipynb**: Moderate augmentation (~70% accuracy)
 
 The `experiments_ferplus/` directory contains experiment on the FER+ dataset with moderate augmentation strategy.
