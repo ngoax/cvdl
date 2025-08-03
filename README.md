@@ -26,13 +26,13 @@ This project implements a facial emotion recognition model that can:
 ├── best-weights.pt                 # Model weights
 ├── README.md                       # This file
 ├── experiments_ferplus/                        
-│   ├── moderate_aug.ipynb          # FER+ experiment moderate augmentation
+│   ├── ferplus_moderate_aug.ipynb  # FER+ experiment moderate augmentation
 └── experiments_fer2013/            # Various Augmentation strategy 
     ├── final_model_fer2013.ipynb   # Final model FER-2013
     ├── no_aug.ipynb
     ├── horizontalflip.ipynb
     ├── verticalflip.ipynb
-    └── moderate-aug.ipynb
+    └── moderate_aug.ipynb
 ```
 
 ## Installation
