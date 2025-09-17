@@ -2,7 +2,7 @@
 
 **Group members:** Antonia Härle, Clara Sophie Negwer, Andre Ngo, Jonas Saathoff
 
-Project for Software Development Practical: Computer Vision and Deep Learning. It demonstrates (real-time) facial emotion recognition using a custom CNN architecture with ResNet-style blocks and Squeeze-and-Excitation (SE) channel attention.
+Project for Software Development Practical: Computer Vision and Deep Learning @ LMU Munich in SS2025. It demonstrates (real-time) facial emotion recognition using a custom CNN architecture with ResNet-style blocks and Squeeze-and-Excitation (SE) channel attention.
 
 
 
