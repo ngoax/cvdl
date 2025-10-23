@@ -1,7 +1,5 @@
 # Facial Emotion Recognition with PyTorch
 
-**Group members:** Antonia Härle, Clara Sophie Negwer, Andre Ngo, Jonas Saathoff
-
 Project for Software Development Practical: Computer Vision and Deep Learning @ LMU Munich in SS2025. It demonstrates (real-time) facial emotion recognition using a custom CNN architecture with ResNet-style blocks and Squeeze-and-Excitation (SE) channel attention.
 
 📄 Read the report [here](https://github.com/ngoax/cvdl/blob/764a96d5140122ec87398cf37981c2da3dab06aa/report.pdf)
